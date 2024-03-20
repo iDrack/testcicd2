@@ -5,6 +5,8 @@ jobs:
         name: build test run
         runs-on: ubuntu-latest
         steps:
+            - name: get source
+              uses: actions/checkout@v4
             - name: install npm
               run: npm ci
             - name: build
