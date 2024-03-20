@@ -11,6 +11,6 @@ jobs:
         run: echo byebye
   deuxieme_job:
     name: job2
-    runs-on: ubuntu-ltest
+    runs-on: ubuntu-latest
     steps:
       - run: echo "Je suis un 2e job"
