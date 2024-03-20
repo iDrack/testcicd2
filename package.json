@@ -1,0 +1,16 @@
+{
+  "name": "testcicd2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"je test l'appli\"",
+    "start": "node index.js",
+    "build": "echo \"Je build\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}
