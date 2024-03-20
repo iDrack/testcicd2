@@ -1,0 +1,10 @@
+name: premier workflow
+on: workflow_dispatch
+jobs:
+  premier_job:
+    runs-on: ubuntu:latest
+    steps:
+      - name: step-1
+        run: echo "Hello world"
+      - name: step-2
+        run: echo byebye
