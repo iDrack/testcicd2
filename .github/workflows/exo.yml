@@ -5,7 +5,7 @@ jobs:
         name: tester le test
         runs-on: ubuntu-latest
         outputs:
-            var1: ${{steps.test.conclusion}}
+            var1: ${{steps.test.outcome}}
         steps:
             - name: get source
               uses: actions/checkout@v4
