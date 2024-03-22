@@ -14,10 +14,6 @@ jobs:
               with:
                 path: ~/.npm
                 key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-                #- name: setup node
-                #uses: actions/setup-node@v4
-                #with: 
-                #  cache: 'npm'
             - name: install npm
               run: npm ci
             - name: build
@@ -25,6 +21,7 @@ jobs:
             - name: test
               id: test
               run: npm run test
+              continue-on-error: true
     job2:
         name: récupérer le résultat
         runs-on: ubuntu-latest
