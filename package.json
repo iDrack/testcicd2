@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Les tests ont échoué" && exit 1\"",
+    "test": "echo \"Les tests ont échoué :(\" && exit 1",
     "start": "node index.js",
     "build": "echo \"Je build\""
   },
