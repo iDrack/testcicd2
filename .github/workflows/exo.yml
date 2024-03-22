@@ -1,8 +1,8 @@
-name: wf on push
+name: exo
 on: workflow_dispatch
 jobs:
-    mon_job:
-        name: build test run
+    job1:
+        name: tester le test
         runs-on: ubuntu-latest
         steps:
             - name: get source
@@ -12,19 +12,19 @@ jobs:
               with:
                 path: ~/.npm
                 key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
-                
                 #- name: setup node
                 #uses: actions/setup-node@v4
                 #with: 
                 #  cache: 'npm'
-                
-
             - name: install npm
               run: npm ci
             - name: build
               run: npm run build
             - name: test
-              run: npm run test
-            - name: run 
-              run: npm run start
-            - run: echo "# Résumé du step" >> $GITHUB_SUMMARY
+              run: npm run test | $GITHUB_SUMMARY
+    job2:
+        name: récupérer le résultat
+        runs-on: ubuntu-latest
+        steps:
+            - name: afficher si le test a échoué
+              run: echo ${{ toJson(github)}}
