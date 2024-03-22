@@ -27,4 +27,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: afficher si le test a échoué
-              run: echo ${{ toJson(github)}}
+              run: echo "${{ toJson(github)}}""
