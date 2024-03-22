@@ -24,7 +24,7 @@ jobs:
               run: npm run build
             - name: test
               id: test
-              run: echo `var1=npm run test` >> $GITHUB_OUTPUT
+              run: echo 'var1=npm run test' >> $GITHUB_OUTPUT
     job2:
         name: récupérer le résultat
         runs-on: ubuntu-latest
