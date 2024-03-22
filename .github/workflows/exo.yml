@@ -4,6 +4,8 @@ jobs:
     job1:
         name: tester le test
         runs-on: ubuntu-latest
+        outputs:
+            var1: ${{steps.test.outputs}}
         steps:
             - name: get source
               uses: actions/checkout@v4
@@ -21,10 +23,12 @@ jobs:
             - name: build
               run: npm run build
             - name: test
-              run: npm run test | $GITHUB_SUMMARY
+              id: test
+              run: npm run test
     job2:
         name: récupérer le résultat
         runs-on: ubuntu-latest
+        needs: job1
         steps:
             - name: afficher si le test a échoué
-              run: echo "${{ toJson(github)}}"
+              run: echo "${{ needs.job1.outputs.var1 }}"
