@@ -31,6 +31,6 @@ jobs:
         needs: job1
         steps:
             - name: afficher si le test a échoué
-              run: echo "$RES" >> $GITHUB_SUMMARY
+              run: echo $RES >> $GITHUB_SUMMARY
               env:
                 RES: ${{ needs.job1.outputs.var1 }}
